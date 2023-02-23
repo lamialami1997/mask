@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <immintrin.h>
 
 #include "types.h"
 
@@ -146,11 +147,7 @@ void release_seq(seq_t *s)
 
 void mask(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
 {  
-  // x = load(a)
-  // y = load(b)
-  // z = xor(x,y)
-  // c = store(z)
-
+  //
   for (u64 i = 0; i < n; i++)
     c[i] = a[i] ^ b[i];
 }
@@ -273,6 +270,43 @@ void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64
 } 
 #endif
 
+
+//version Intrasic "intrasic"
+#if __AVX512F__
+void mask_intrasic(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
+{  
+  // a = load(a)
+  // b = load(b)
+  // x = xor(a,b)
+  // c = store(x)
+  for (u64 i = 0; i < n; i+=64) 
+  {
+
+   __m512i va = _mm512_load_si512 (&a[i]);
+   __m512i vb = _mm512_load_si512 (&b[i]);
+   __m512i vx = _mm512_xor_si512 (va , vb);
+    _mm512_store_si512 ( &c[i],vx);
+  
+  } 
+    
+}
+
+#else
+void mask_intrasic(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
+{  
+  //
+  for (u64 i = 0; i < n; i+=32)  
+    {
+      __m256i va = _mm256_load_si256 (&a[i]);
+      __m256i vb = _mm256_load_si256 (&b[i]);
+      __m256i vx = _mm256_xor_si256 (va,vb);
+      _mm256_store_si256 (&c[i],vx);
+    }
+    
+} 
+#endif
+
+
 //
 void measure_mask(const char *title,
       void kernel(const u8 *, const u8 *, u8 *, u64),
@@ -357,6 +391,7 @@ int main(int argc, char **argv)
   //
   measure_mask("Naive", mask, s1->bases, s2->bases, s1->len);
   measure_mask("Unroll", mask_unroll, s1->bases, s2->bases, s1->len);
+  measure_mask("Intasic", mask_intrasic, s1->bases, s2->bases, s1->len);
   
   //
   release_seq(s1); free(s1);
@@ -366,3 +401,8 @@ int main(int argc, char **argv)
   return 0;
 
 }
+
+
+// A -> 00
+// C -> 01
+// G -> 10
