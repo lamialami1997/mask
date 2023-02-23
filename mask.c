@@ -16,6 +16,8 @@
 #define ERR_CREAT_FILE   7
 
 //
+#define ALIGN64 64
+
 typedef double f64;
 
 //Sequence definitions
@@ -56,7 +58,7 @@ void error()
 }
 
 //
-seq_t *load_seq(const char *fname)
+seq_t *restrict load_seq(const char *fname)
 {
   //
   if (!fname)
@@ -75,7 +77,7 @@ seq_t *load_seq(const char *fname)
     }
   
   //Allocate sequence 
-  seq_t *s = malloc(sizeof(seq_t));
+  seq_t *restrict s = aligned_alloc(ALIGN64 , sizeof(seq_t));
   
   if (!s)
     {
@@ -87,7 +89,7 @@ seq_t *load_seq(const char *fname)
   s->len = sb.st_size;
 
   //Allocating memory for sequence bases
-  s->bases = malloc(sizeof(u8) * sb.st_size);
+  s->bases = aligned_alloc(ALIGN64 , sizeof(u8) * sb.st_size);
   
   if (!s->bases)
     {
@@ -141,10 +143,20 @@ void release_seq(seq_t *s)
 }
 
 //
-void mask(const u8 *a, const u8 *b, u8 *c, u64 n)
+void mask(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
+{  
+  // x = load(a)
+  // y = load(b)
+  // z = xor(x,y)
+  // c = store(z)
+
+  for (u64 i = 0; i < n; i++)
+    c[i] = a[i] ^ b[i];
+}
+void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
 {  
   //
-  for (u64 i = 0; i < n; i++)
+  for (u64 i = 0; i < n; i++)  
     c[i] = a[i] ^ b[i];
 }
 
@@ -159,7 +171,7 @@ void measure_mask(const char *title,
   f64 elapsed = 0.0;
   struct timespec t1, t2;
 
-  u8 *cmp_mask = malloc(sizeof(u8) * n);
+  u8 *restrict cmp_mask = aligned_alloc(ALIGN64 ,sizeof(u8) * n);
 
   FILE *fp = fopen("mask.dat", "wb");
 
