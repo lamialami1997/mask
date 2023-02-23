@@ -1,0 +1,56 @@
+# Intro
+-------
+
+  The main code (mask.c) computes the mask of two given sequences.
+
+  The auxiliary code (genseq.c) generates sequences with a given length.
+      
+# Compilation
+-------------
+
+  $ make
+  
+  This command compiles both the sequence generator and the
+  sequence analyzer.
+
+# Running
+---------
+
+  First generate two sequences of the same length using the
+  sequence generator:
+
+  $ ./genseq s1.dna [length]
+  $ ./genseq s2.dna [length]
+
+  Then, you can run the code on both sequences:
+
+  $ ./mask s1.dna s2.dna 
+
+# Output
+--------
+
+  The program write the mask in a file named 'mask.dat' and outputs the time it took to
+  process the sequences.
+  
+# Potential optimizations
+-------------------------
+
+ 0 - Type changes
+ 1 - Memory alignment
+ 2 - Loop unrolling
+ 3 - Vectorization (SSE, AVX, or AVX512 for x86_64 architectures).
+   3.1 - Compiler auto-vectorization
+   3.2 - OpenMP vectorization directive
+   3.3 - Intrinsics (https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#)
+   3.4 - Inline assembly :)
+ 4 - Test different compiler optimizations.
+ 5 - Test the code using different lengths of sequences that fit into different cache levels.
+ 6 - Parallelization using OpenMP on the main loop.
+ 7 - Use different compilers (at least two): gcc, clang, aocc, icx, and icc
+ 8 - Add other performance metrics: bandwidth (GiB/s), Giga bases per second (Gb/s), elapsed time, ...
+
+# Report
+--------
+
+ You are to provide a performance analysis report of all the versions with plots comparing the
+ performance of all the conducted experiments on KNL/KNM as well as Haswell nodes on the OB1 cluster.
