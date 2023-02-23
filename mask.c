@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <immintrin.h>
+#include <omp.h>
 
 #include "types.h"
 
@@ -158,7 +159,7 @@ void mask(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
 void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
 {  
   //
-  for (u64 i = 0; i < n; i+=64) 
+  for (u64 i = 0; i < n -(n%64); i+=64) 
   {
     c[i+0] = a[i+0]  ^ b[i+0] ;
     c[i+1] = a[i+1]  ^ b[i+1] ;
@@ -223,7 +224,9 @@ void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64
     c[i+61] = a[i+61] ^ b[i+61];
     c[i+62] = a[i+62] ^ b[i+62];
     c[i+63] = a[i+63] ^ b[i+63];
-  } 
+  }
+  for (u64 i = n - (n%64); i < n; i++)
+    c[i] = a[i] ^ b[i]; 
     
 }
 
@@ -231,7 +234,7 @@ void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64
 void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
 {  
   //
-  for (u64 i = 0; i < n; i+=32)  
+  for (u64 i = 0; i < n - (n%32); i+=32)  
     {
       c[i+0] = a[i+0]  ^ b[i+0] ;
       c[i+1] = a[i+1]  ^ b[i+1] ;
@@ -266,6 +269,8 @@ void mask_unroll(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64
       c[i+30] = a[i+30] ^ b[i+30];
       c[i+31] = a[i+31] ^ b[i+31];
     }
+    for (u64 i = n - (n%32); i < n; i++)
+    c[i] = a[i] ^ b[i];
     
 } 
 #endif
@@ -307,7 +312,25 @@ void mask_intrasic(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u
 #endif
 
 
-//
+//Version vectorisation avec les directive OpenMP "mask_simd"
+#if __AVX512F__
+void mask_simd(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
+{  
+  #pragma omp simd aligned(a,b,c)
+  //#pragma unroll(32)
+  for (u64 i = 0; i < n; i++)
+    c[i] = a[i] ^ b[i];
+}
+#else
+void mask_simd(const u8 *restrict a, const u8 *restrict b, u8 *restrict c, u64 n)
+{  
+  #pragma omp simd aligned(a,b,c)
+  //#pragma unroll(64)
+  for (u64 i = 0; i < n; i++)
+    c[i] = a[i] ^ b[i];
+}
+#endif
+
 void measure_mask(const char *title,
       void kernel(const u8 *, const u8 *, u8 *, u64),
       u8 *s1,
@@ -392,6 +415,7 @@ int main(int argc, char **argv)
   measure_mask("Naive", mask, s1->bases, s2->bases, s1->len);
   measure_mask("Unroll", mask_unroll, s1->bases, s2->bases, s1->len);
   measure_mask("Intasic", mask_intrasic, s1->bases, s2->bases, s1->len);
+  measure_mask("OMP_Simd", mask_simd, s1->bases, s2->bases, s1->len);
   
   //
   release_seq(s1); free(s1);
