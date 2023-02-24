@@ -35,14 +35,14 @@
 # Potential optimizations
 -------------------------
 
- 0 - Type changes // rien a faire 
- 1 - Memory alignment // align64
- 2 - Loop unrolling // déroulage à la main
+ 0 - Type changes 
+ 1 - Memory alignment 
+ 2 - Loop unrolling 
  3 - Vectorization (SSE, AVX, or AVX512 for x86_64 architectures).
-   3.1 - Compiler auto-vectorization //flags
-   3.2 - OpenMP vectorization directive // openmp
-   3.3 - Intrinsics (https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#)// intrasic
-   3.4 - Inline assembly :) // asm 
+   3.1 - Compiler auto-vectorization 
+   3.2 - OpenMP vectorization directive 
+   3.3 - Intrinsics (https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#)
+   3.4 - Inline assembly :) 
  4 - Test different compiler optimizations.
  5 - Test the code using different lengths of sequences that fit into different cache levels.
  6 - Parallelization using OpenMP on the main loop.
