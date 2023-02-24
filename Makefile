@@ -2,12 +2,15 @@ CC=gcc
 
 CFLAGS=-Wall -g
 
-OFLAGS=-march=native -Ofast -finline-functions -fopenmp -fopt-info-all=dist.gcc.optrpt 
+GCC_OFLAGS=-march=native -mavx2 -Ofast -finline-functions -funroll-loops -ftree-vectorize -ftree-loop-vectorize -fopenmp -fopt-info-all=dist.gcc.optrpt 
+ICX_OFLAGS=-march=native -mavx2 -Ofast -finline-functions -funroll-loops -fopenmp
 
-all: genseq mask
+all: genseq mask.g
 
-mask: mask.c
-	$(CC) $(CFLAGS) $(OFLAGS) $< -o $@
+mask.g: mask.c
+	gcc $(CFLAGS) $(GCC_OFLAGS) $< -o $@
+mask.i: mask.c
+	icx $(CFLAGS) $(ICX_OFLAGS) $< -o $@
 
 genseq: genseq.c
 	$(CC) -march=native $(CFLAGS) -Ofast $< -o $@
