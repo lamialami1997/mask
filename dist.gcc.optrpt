@@ -4970,3 +4970,973 @@ mask.c:136:3: missed: statement clobbers memory: free (_52);
 mask.c:640:20: missed: statement clobbers memory: free (s1_36);
 mask.c:136:3: missed: statement clobbers memory: free (_51);
 mask.c:641:20: missed: statement clobbers memory: free (s2_39);
+mask.c:420:5: optimized:   Inlining _mm512_store_si512/1120 into mask_intrasic/5322 (always_inline).
+mask.c:419:17: optimized:   Inlining _mm512_xor_si512/1686 into mask_intrasic/5322 (always_inline).
+mask.c:418:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic/5322 (always_inline).
+mask.c:417:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic/5322 (always_inline).
+mask.c:456:5: optimized:   Inlining _mm512_store_si512/1120 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:455:17: optimized:   Inlining _mm512_xor_si512/1686 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:454:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:453:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:56:3: optimized:   Inlining printf/15 into error/5315 (always_inline).
+mask.c:112:23: optimized:   Inlining fread/21 into load_seq/5316 (always_inline).
+mask.c:75:7: optimized:   Inlining stat/39 into load_seq/5316 (always_inline).
+mask.c:594:3: optimized:   Inlining printf/15 into measure_mask/5326 (always_inline).
+mask.c:565:7: note: Considering inline candidate error/5315.
+mask.c:565:7: missed:   will not early inline: measure_mask/5326->error/5315, call is cold and code would grow by 8
+mask.c:626:3: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:623:12: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:607:12: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:641:3: note: Considering inline candidate release_seq/5317.
+mask.c:641:3: optimized:  Inlining release_seq/5317 into main/5327.
+mask.c:640:3: note: Considering inline candidate release_seq/5317.
+mask.c:640:3: optimized:  Inlining release_seq/5317 into main/5327.
+mask.c:636:3: note: Considering inline candidate measure_mask/5326.
+mask.c:636:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:635:3: note: Considering inline candidate measure_mask/5326.
+mask.c:635:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:634:3: note: Considering inline candidate measure_mask/5326.
+mask.c:634:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:633:3: note: Considering inline candidate measure_mask/5326.
+mask.c:633:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:632:3: note: Considering inline candidate measure_mask/5326.
+mask.c:632:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:631:3: note: Considering inline candidate measure_mask/5326.
+mask.c:631:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:630:3: note: Considering inline candidate measure_mask/5326.
+mask.c:630:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:629:3: note: Considering inline candidate measure_mask/5326.
+mask.c:629:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:619:5: note: Considering inline candidate error/5315.
+mask.c:619:5: missed:   will not early inline: main/5327->error/5315, call is cold and code would grow by 8
+mask.c:616:15: note: Considering inline candidate load_seq/5316.
+mask.c:616:15: missed:   will not early inline: main/5327->load_seq/5316, growth 67 exceeds --param early-inlining-insns
+mask.c:613:5: note: Considering inline candidate error/5315.
+mask.c:613:5: missed:   will not early inline: main/5327->error/5315, call is cold and code would grow by 8
+mask.c:610:15: note: Considering inline candidate load_seq/5316.
+mask.c:610:15: missed:   will not early inline: main/5327->load_seq/5316, growth 67 exceeds --param early-inlining-insns
+missed:   not inlinable: mask_simd_para._omp_fn.0/5347 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_simd_para._omp_fn.0/5347 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_intrasic_para._omp_fn.0/5345 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_intrasic_para._omp_fn.0/5345 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_unroll_para._omp_fn.0/5344 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_unroll_para._omp_fn.0/5344 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_para._omp_fn.0/5340 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_para._omp_fn.0/5340 -> __builtin_omp_get_num_threads/5341, function body not available
+mask.c:641:20: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:136:3: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:640:20: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:136:3: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:636:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:635:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:634:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:633:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:632:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:631:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:630:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:629:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+mask.c:619:5: missed:   not inlinable: main/5327 -> error/5315, call is unlikely and code size would grow
+mask.c:616:15: missed:   not inlinable: main/5327 -> load_seq/5316, --param max-inline-insns-auto limit reached
+mask.c:613:5: missed:   not inlinable: main/5327 -> error/5315, call is unlikely and code size would grow
+mask.c:610:15: missed:   not inlinable: main/5327 -> load_seq/5316, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+mask.c:599:3: missed:   not inlinable: measure_mask/5326 -> fclose/5332, function body not available
+mask.c:596:3: missed:   not inlinable: measure_mask/5326 -> fwrite/5349, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: measure_mask/5326 -> __printf_chk/5329, function body not available
+mask.c:579:7: missed:   not inlinable: measure_mask/5326 -> clock_gettime/5348, function body not available
+mask.c:574:7: missed:   not inlinable: measure_mask/5326 -> clock_gettime/5348, function body not available
+mask.c:565:7: missed:   not inlinable: measure_mask/5326 -> error/5315, call is unlikely and code size would grow
+mask.c:560:14: missed:   not inlinable: measure_mask/5326 -> fopen/5331, function body not available
+mask.c:558:27: missed:   not inlinable: measure_mask/5326 -> aligned_alloc/5330, function body not available
+missed:   not inlinable: mask_simd_para/5325 -> __builtin_GOMP_parallel/5343, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+missed:   not inlinable: mask_intrasic_para/5323 -> __builtin_GOMP_parallel/5343, function body not available
+missed:   not inlinable: mask_unroll_para/5321 -> __builtin_GOMP_parallel/5343, function body not available
+missed:   not inlinable: mask_para/5319 -> __builtin_GOMP_parallel/5343, function body not available
+mask.c:136:3: missed:   not inlinable: release_seq/5317 -> free/5339, function body not available
+mask.c:115:3: missed:   not inlinable: load_seq/5316 -> fclose/5332, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:297:10: missed:   not inlinable: load_seq/5316 -> __fread_alias/5338, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:295:9: missed:   not inlinable: load_seq/5316 -> __fread_chk_warn/5337, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:292:9: missed:   not inlinable: load_seq/5316 -> __fread_chk/5336, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:290:8: missed:   not inlinable: load_seq/5316 -> __builtin_constant_p/5335, mismatched arguments
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:287:7: missed:   not inlinable: load_seq/5316 -> __builtin_object_size/5334, function body not available
+mask.c:103:14: missed:   not inlinable: load_seq/5316 -> fopen/5331, function body not available
+mask.c:94:14: missed:   not inlinable: load_seq/5316 -> aligned_alloc/5330, function body not available
+mask.c:82:23: missed:   not inlinable: load_seq/5316 -> aligned_alloc/5330, function body not available
+/usr/include/x86_64-linux-gnu/sys/stat.h:455:10: missed:   not inlinable: load_seq/5316 -> __xstat/5333, function body not available
+mask.c:59:3: missed:   not inlinable: error/5315 -> exit/5328, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: error/5315 -> __printf_chk/5329, function body not available
+Unit growth for small function inlining: 1534->1534 (0%)
+
+Inlined 17 calls, eliminated 0 functions
+
+mask.c:152:3: optimized: loop vectorized using 32 byte vectors
+mask.c:149:6: note: vectorized 1 loops in function.
+mask.c:152:3: note: considering unrolling loop 3 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:3: optimized: loop unrolled 7 times
+mask.c:152:19: note: considering unrolling loop 1 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:19: optimized: loop unrolled 7 times
+mask.c:152:19: note: considering unrolling loop 2 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:19: optimized: loop unrolled 7 times
+mask.c:234:3: optimized: loop vectorized using 32 byte vectors
+mask.c:168:3: optimized: loop vectorized using 32 byte vectors
+mask.c:165:6: note: vectorized 2 loops in function.
+mask.c:168:3: note: SLPing BB part
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _761 = *_762;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_762
+mask.c:168:3: note: created vectp.309_524
+mask.c:168:3: note: add new stmt: vect__761.310_1 = MEM[(const u8 *)vectp.309_524];
+mask.c:168:3: note: add new stmt: vectp.309_2068 = vectp.309_524 + 32;
+mask.c:168:3: note: add new stmt: vect__761.311_2069 = MEM[(const u8 *)vectp.309_2068];
+mask.c:168:3: note: add new stmt: vect__761.312_2 = VEC_PERM_EXPR <vect__761.310_1, vect__761.310_1, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _759 = *_760;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_760
+mask.c:168:3: note: created vectp.314_3
+mask.c:168:3: note: add new stmt: vect__759.315_2581 = MEM[(const u8 *)vectp.314_3];
+mask.c:168:3: note: add new stmt: vectp.314_2582 = vectp.314_3 + 32;
+mask.c:168:3: note: add new stmt: vect__759.316_4 = MEM[(const u8 *)vectp.314_2582];
+mask.c:168:3: note: add new stmt: vect__759.317_5 = VEC_PERM_EXPR <vect__759.315_2581, vect__759.315_2581, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _757 = _761 ^ _759;
+mask.c:168:3: note: vect_is_simple_use: operand *_762, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype const vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand *_760, type of def: internal
+mask.c:168:3: note: transform binary/unary operation.
+mask.c:168:3: note: add new stmt: vect__757.318_6 = vect__761.312_2 ^ vect__759.317_5;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: *_758 = _757;
+mask.c:168:3: note: vect_is_simple_use: operand _761 ^ _759, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand _753 ^ _751, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _745 ^ _743, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _737 ^ _735, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _729 ^ _727, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _721 ^ _719, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _713 ^ _711, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _705 ^ _703, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _697 ^ _695, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _761 ^ _759, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _686 ^ _684, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _678 ^ _676, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _670 ^ _668, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _662 ^ _660, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _654 ^ _652, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _646 ^ _644, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _638 ^ _636, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _630 ^ _628, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _622 ^ _620, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _614 ^ _612, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _606 ^ _604, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _598 ^ _596, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _590 ^ _588, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _582 ^ _580, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _574 ^ _572, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _566 ^ _564, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _558 ^ _556, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _550 ^ _548, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _542 ^ _540, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _534 ^ _532, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _518 ^ _445, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1148 ^ _1146, type of def: internal
+mask.c:168:3: note: transform store. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: vector(32) unsigned char  vectorizing a pointer ref: *_758
+mask.c:168:3: note: created vectp.320_7
+mask.c:168:3: note: add new stmt: MEM[(u8 *)vectp.320_7] = vect__757.318_6;
+mask.c:168:3: note: vectorizing stmts using SLP.
+mask.c:168:3: optimized: basic block part vectorized using 32 byte vectors
+mask.c:168:3: note: basic block vectorized
+mask.c:168:3: note: SLPing BB part
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1333 = *_1334;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_1334
+mask.c:168:3: note: created vectp.322_9
+mask.c:168:3: note: add new stmt: vect__1333.323_10 = MEM[(const u8 *)vectp.322_9];
+mask.c:168:3: note: add new stmt: vectp.322_11 = vectp.322_9 + 32;
+mask.c:168:3: note: add new stmt: vect__1333.324_12 = MEM[(const u8 *)vectp.322_11];
+mask.c:168:3: note: add new stmt: vect__1333.325_13 = VEC_PERM_EXPR <vect__1333.323_10, vect__1333.323_10, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1331 = *_1332;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_1332
+mask.c:168:3: note: created vectp.327_14
+mask.c:168:3: note: add new stmt: vect__1331.328_15 = MEM[(const u8 *)vectp.327_14];
+mask.c:168:3: note: add new stmt: vectp.327_16 = vectp.327_14 + 32;
+mask.c:168:3: note: add new stmt: vect__1331.329_17 = MEM[(const u8 *)vectp.327_16];
+mask.c:168:3: note: add new stmt: vect__1331.330_18 = VEC_PERM_EXPR <vect__1331.328_15, vect__1331.328_15, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1329 = _1333 ^ _1331;
+mask.c:168:3: note: vect_is_simple_use: operand *_1334, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype const vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand *_1332, type of def: internal
+mask.c:168:3: note: transform binary/unary operation.
+mask.c:168:3: note: add new stmt: vect__1329.331_19 = vect__1333.325_13 ^ vect__1331.330_18;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: *_1330 = _1329;
+mask.c:168:3: note: vect_is_simple_use: operand _1333 ^ _1331, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand _1325 ^ _1323, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1317 ^ _1315, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1309 ^ _1307, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1301 ^ _1299, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1293 ^ _1291, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1285 ^ _1283, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1277 ^ _1275, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1269 ^ _1267, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1333 ^ _1331, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1258 ^ _1256, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1250 ^ _1248, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1242 ^ _1240, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1234 ^ _1232, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1226 ^ _1224, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1218 ^ _1216, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1210 ^ _1208, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1202 ^ _1200, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1194 ^ _1192, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1186 ^ _1184, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1178 ^ _1176, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1170 ^ _1168, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1162 ^ _1160, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1154 ^ _1152, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1080 ^ _1078, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1072 ^ _1070, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1064 ^ _1062, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1056 ^ _1054, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1048 ^ _1046, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1040 ^ _1038, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1032 ^ _1030, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1024 ^ _1022, type of def: internal
+mask.c:168:3: note: transform store. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: vector(32) unsigned char  vectorizing a pointer ref: *_1330
+mask.c:168:3: note: created vectp.333_20
+mask.c:168:3: note: add new stmt: MEM[(u8 *)vectp.333_20] = vect__1329.331_19;
+mask.c:168:3: note: vectorizing stmts using SLP.
+mask.c:168:3: optimized: basic block part vectorized using 32 byte vectors
+mask.c:168:3: note: basic block vectorized
+mask.c:168:3: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:234:3: note: considering unrolling loop 4 at BB 21
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:3: optimized: loop unrolled 7 times
+mask.c:234:28: note: considering unrolling loop 2 at BB 18
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:28: optimized: loop unrolled 7 times
+mask.c:234:28: note: considering unrolling loop 3 at BB 15
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:28: optimized: loop unrolled 7 times
+mask.c:168:3: note: considering unrolling loop 5 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:168:3: note: considering unrolling loop 6 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:168:19: note: considering unrolling loop 1 at BB 5
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:414:3: missed: couldn't vectorize loop
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:547:10: missed: not vectorized: no vectype for stmt: _17 = MEM[(__m512i * {ref-all})_1];
+ scalar_type: __m512i
+mask.c:408:6: note: vectorized 0 loops in function.
+mask.c:414:3: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:414:3: note: considering unrolling loop 1 at BB 4
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:414:3: optimized: loop unrolled 7 times
+consider run-time aliasing test between *_22 and *_26
+consider run-time aliasing test between *_24 and *_26
+mask.c:160:5: optimized: loop vectorized using 32 byte vectors
+mask.c:160:5: optimized:  loop versioned for vectorization because of possible aliasing
+mask.c:158:11: note: vectorized 1 loops in function.
+mask.c:160:10: note: considering unrolling loop 2 at BB 20
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 4 at BB 16
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 1 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 3 at BB 11
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:156:6: note: vectorized 0 loops in function.
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: ***** Re-trying analysis with vector size 32
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: ***** Re-trying analysis with vector size 16
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: SLPing BB part
+mask.c:158:11: note: ------>vectorizing SLP node starting from: .omp_data_o.4.a = a_8(D);
+mask.c:158:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:158:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:158:11: note: transform store. ncopies = 1
+mask.c:158:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:158:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.4.a
+mask.c:158:11: note: created &.omp_data_o.4.a
+mask.c:158:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.4] = vect_cst__15;
+mask.c:158:11: note: vectorizing stmts using SLP.
+mask.c:158:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:161:1: note: basic block vectorized
+mask.c:355:3: optimized: loop vectorized using 32 byte vectors
+mask.c:286:6: note: vectorized 1 loops in function.
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: ***** Re-trying analysis with vector size 32
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: ***** Re-trying analysis with vector size 16
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: SLPing BB part
+mask.c:288:11: note: ------>vectorizing SLP node starting from: .omp_data_o.8.a = a_16(D);
+mask.c:288:11: note: vect_is_simple_use: operand a_16(D), type of def: external
+mask.c:288:11: note: vect_is_simple_use: operand b_14(D), type of def: external
+mask.c:288:11: note: transform store. ncopies = 1
+mask.c:288:11: note: created new init_stmt: vect_cst__3 = _2;
+mask.c:288:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.8.a
+mask.c:288:11: note: created &.omp_data_o.8.a
+mask.c:288:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.8] = vect_cst__3;
+mask.c:288:11: note: vectorizing stmts using SLP.
+mask.c:288:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:355:3: note: basic block vectorized
+mask.c:355:3: note: considering unrolling loop 4 at BB 12
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:3: optimized: loop unrolled 7 times
+mask.c:355:28: note: considering unrolling loop 1 at BB 9
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:28: optimized: loop unrolled 7 times
+mask.c:355:28: note: considering unrolling loop 3 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:28: optimized: loop unrolled 7 times
+mask.c:443:6: note: vectorized 0 loops in function.
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: ***** Re-trying analysis with vector size 32
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: ***** Re-trying analysis with vector size 16
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: SLPing BB part
+mask.c:449:11: note: ------>vectorizing SLP node starting from: .omp_data_o.13.a = a_8(D);
+mask.c:449:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:449:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:449:11: note: transform store. ncopies = 1
+mask.c:449:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:449:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.13.a
+mask.c:449:11: note: created &.omp_data_o.13.a
+mask.c:449:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.13] = vect_cst__15;
+mask.c:449:11: note: vectorizing stmts using SLP.
+mask.c:449:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:460:1: note: basic block vectorized
+mask.c:499:6: note: vectorized 0 loops in function.
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: ***** Re-trying analysis with vector size 32
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: ***** Re-trying analysis with vector size 16
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: SLPing BB part
+mask.c:501:11: note: ------>vectorizing SLP node starting from: .omp_data_o.21.a = a_8(D);
+mask.c:501:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:501:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:501:11: note: transform store. ncopies = 1
+mask.c:501:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:501:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.21.a
+mask.c:501:11: note: created &.omp_data_o.21.a
+mask.c:501:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.21] = vect_cst__15;
+mask.c:501:11: note: vectorizing stmts using SLP.
+mask.c:501:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:504:1: note: basic block vectorized
+mask.c:291:5: optimized: loop vectorized using 32 byte vectors
+mask.c:291:5: optimized:  loop versioned for vectorization because of possible aliasing
+mask.c:288:11: note: vectorized 1 loops in function.
+mask.c:353:13: note: ***** Re-trying analysis with vector size 64
+mask.c:353:13: note: ***** Re-trying analysis with vector size 16
+mask.c:353:13: note: ***** Re-trying analysis with vector size 64
+mask.c:353:13: note: ***** Re-trying analysis with vector size 16
+mask.c:288:11: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:353:13: note: considering unrolling loop 2 at BB 12
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:353:13: note: considering unrolling loop 3 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:353:13: note: considering unrolling loop 1 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:453:4: missed: couldn't vectorize loop
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:547:10: missed: not vectorized: no vectype for stmt: _35 = MEM[(__m512i * {ref-all})_26];
+ scalar_type: __m512i
+mask.c:449:11: note: vectorized 0 loops in function.
+mask.c:449:11: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:456:5: note: considering unrolling loop 1 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:456:5: optimized: loop unrolled 7 times
+mask.c:485:5: optimized: loop vectorized using 32 byte vectors
+mask.c:480:6: note: vectorized 1 loops in function.
+mask.c:485:10: note: considering unrolling loop 2 at BB 9
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:485:10: optimized: loop unrolled 7 times
+mask.c:485:10: note: considering unrolling loop 1 at BB 5
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:485:10: optimized: loop unrolled 7 times
+consider run-time aliasing test between *_22 and *_26
+consider run-time aliasing test between *_24 and *_26
+mask.c:503:7: optimized: loop vectorized using 32 byte vectors
+mask.c:501:11: note: vectorized 1 loops in function.
+mask.c:503:12: note: considering unrolling loop 3 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+mask.c:503:12: note: considering unrolling loop 1 at BB 11
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+mask.c:503:12: note: considering unrolling loop 2 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Error (%llu): %s\n", err_id.0_1, _2);
+mask.c:59:3: missed: statement clobbers memory: exit (-1);
+/usr/include/x86_64-linux-gnu/sys/stat.h:455:10: missed: statement clobbers memory: _26 = __xstat (1, fname_9(D), &sb);
+mask.c:82:23: missed: statement clobbers memory: s_12 = aligned_alloc (64, 16);
+mask.c:94:14: missed: statement clobbers memory: _3 = aligned_alloc (64, _2);
+mask.c:103:14: missed: statement clobbers memory: fp_17 = fopen (fname_9(D), "rb");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:297:10: missed: statement clobbers memory: _32 = __fread_alias (_5, 1, _4, fp_17);
+mask.c:115:3: missed: statement clobbers memory: fclose (fp_17);
+mask.c:136:3: missed: statement clobbers memory: free (_1);
+mask.c:583:3: missed: couldn't vectorize loop
+mask.c:583:3: missed: not vectorized: number of iterations cannot be computed.
+mask.c:576:7: missed: couldn't vectorize loop
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:548:6: note: vectorized 0 loops in function.
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:558:27: missed: statement clobbers memory: cmp_mask_16 = aligned_alloc (64, n_14(D));
+mask.c:560:14: missed: statement clobbers memory: fp_18 = fopen ("mask.dat", "wb");
+mask.c:565:7: missed: statement clobbers memory: error ();
+mask.c:571:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:574:7: missed: statement clobbers memory: clock_gettime (4, &t1);
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:579:7: missed: statement clobbers memory: clock_gettime (4, &t2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "%25s; 0x%08x; %15.3lf; %15.3lf\n", title_29(D), _8, elapsed_12, bw_28);
+mask.c:596:3: missed: statement clobbers memory: fwrite (cmp_mask_16, 1, n_14(D), fp_18);
+mask.c:599:3: missed: statement clobbers memory: fclose (fp_18);
+mask.c:576:7: note: considering unrolling loop 2 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:583:3: note: considering unrolling loop 1 at BB 5
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Usage: %s [seq1] [seq2]\n", _1);
+mask.c:610:15: missed: statement clobbers memory: s1_36 = load_seq (_2);
+mask.c:613:5: missed: statement clobbers memory: error ();
+mask.c:616:15: missed: statement clobbers memory: s2_39 = load_seq (_3);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Error: sequences must match in length");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "%25s; %10s; %15s; %15s\n", "title", "mask", "elapsed(ns)", "GB/s");
+mask.c:629:3: missed: statement clobbers memory: measure_mask ("Naive", mask, _8, _7, _6);
+mask.c:630:3: missed: statement clobbers memory: measure_mask ("Naive_para", mask_para, _11, _10, _9);
+mask.c:631:3: missed: statement clobbers memory: measure_mask ("Unroll", mask_unroll, _14, _13, _12);
+mask.c:632:3: missed: statement clobbers memory: measure_mask ("Unroll_para", mask_unroll_para, _17, _16, _15);
+mask.c:633:3: missed: statement clobbers memory: measure_mask ("Intasic", mask_intrasic, _20, _19, _18);
+mask.c:634:3: missed: statement clobbers memory: measure_mask ("Intasic_para", mask_intrasic_para, _23, _22, _21);
+mask.c:635:3: missed: statement clobbers memory: measure_mask ("OMP_Simd", mask_simd, _26, _25, _24);
+mask.c:636:3: missed: statement clobbers memory: measure_mask ("OMP_Simd_para", mask_simd_para, _29, _28, _27);
+mask.c:136:3: missed: statement clobbers memory: free (_52);
+mask.c:640:20: missed: statement clobbers memory: free (s1_36);
+mask.c:136:3: missed: statement clobbers memory: free (_51);
+mask.c:641:20: missed: statement clobbers memory: free (s2_39);
+mask.c:420:5: optimized:   Inlining _mm512_store_si512/1120 into mask_intrasic/5322 (always_inline).
+mask.c:419:17: optimized:   Inlining _mm512_xor_si512/1686 into mask_intrasic/5322 (always_inline).
+mask.c:418:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic/5322 (always_inline).
+mask.c:417:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic/5322 (always_inline).
+mask.c:456:5: optimized:   Inlining _mm512_store_si512/1120 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:455:17: optimized:   Inlining _mm512_xor_si512/1686 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:454:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:453:17: optimized:   Inlining _mm512_load_si512/1116 into mask_intrasic_para._omp_fn.0/5345 (always_inline).
+mask.c:56:3: optimized:   Inlining printf/15 into error/5315 (always_inline).
+mask.c:112:23: optimized:   Inlining fread/21 into load_seq/5316 (always_inline).
+mask.c:75:7: optimized:   Inlining stat/39 into load_seq/5316 (always_inline).
+mask.c:594:3: optimized:   Inlining printf/15 into measure_mask/5326 (always_inline).
+mask.c:565:7: note: Considering inline candidate error/5315.
+mask.c:565:7: missed:   will not early inline: measure_mask/5326->error/5315, call is cold and code would grow by 8
+mask.c:626:3: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:623:12: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:607:12: optimized:   Inlining printf/15 into main/5327 (always_inline).
+mask.c:641:3: note: Considering inline candidate release_seq/5317.
+mask.c:641:3: optimized:  Inlining release_seq/5317 into main/5327.
+mask.c:640:3: note: Considering inline candidate release_seq/5317.
+mask.c:640:3: optimized:  Inlining release_seq/5317 into main/5327.
+mask.c:636:3: note: Considering inline candidate measure_mask/5326.
+mask.c:636:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:635:3: note: Considering inline candidate measure_mask/5326.
+mask.c:635:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:634:3: note: Considering inline candidate measure_mask/5326.
+mask.c:634:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:633:3: note: Considering inline candidate measure_mask/5326.
+mask.c:633:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:632:3: note: Considering inline candidate measure_mask/5326.
+mask.c:632:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:631:3: note: Considering inline candidate measure_mask/5326.
+mask.c:631:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:630:3: note: Considering inline candidate measure_mask/5326.
+mask.c:630:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:629:3: note: Considering inline candidate measure_mask/5326.
+mask.c:629:3: missed:   will not early inline: main/5327->measure_mask/5326, growth 54 exceeds --param early-inlining-insns
+mask.c:619:5: note: Considering inline candidate error/5315.
+mask.c:619:5: missed:   will not early inline: main/5327->error/5315, call is cold and code would grow by 8
+mask.c:616:15: note: Considering inline candidate load_seq/5316.
+mask.c:616:15: missed:   will not early inline: main/5327->load_seq/5316, growth 67 exceeds --param early-inlining-insns
+mask.c:613:5: note: Considering inline candidate error/5315.
+mask.c:613:5: missed:   will not early inline: main/5327->error/5315, call is cold and code would grow by 8
+mask.c:610:15: note: Considering inline candidate load_seq/5316.
+mask.c:610:15: missed:   will not early inline: main/5327->load_seq/5316, growth 67 exceeds --param early-inlining-insns
+missed:   not inlinable: mask_simd_para._omp_fn.0/5347 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_simd_para._omp_fn.0/5347 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_intrasic_para._omp_fn.0/5345 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_intrasic_para._omp_fn.0/5345 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_unroll_para._omp_fn.0/5344 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_unroll_para._omp_fn.0/5344 -> __builtin_omp_get_num_threads/5341, function body not available
+missed:   not inlinable: mask_para._omp_fn.0/5340 -> __builtin_omp_get_thread_num/5342, function body not available
+missed:   not inlinable: mask_para._omp_fn.0/5340 -> __builtin_omp_get_num_threads/5341, function body not available
+mask.c:641:20: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:136:3: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:640:20: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:136:3: missed:   not inlinable: main/5327 -> free/5339, function body not available
+mask.c:636:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:635:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:634:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:633:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:632:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:631:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:630:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+mask.c:629:3: missed:   not inlinable: main/5327 -> measure_mask/5326, call is unlikely and code size would grow
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+mask.c:619:5: missed:   not inlinable: main/5327 -> error/5315, call is unlikely and code size would grow
+mask.c:616:15: missed:   not inlinable: main/5327 -> load_seq/5316, --param max-inline-insns-auto limit reached
+mask.c:613:5: missed:   not inlinable: main/5327 -> error/5315, call is unlikely and code size would grow
+mask.c:610:15: missed:   not inlinable: main/5327 -> load_seq/5316, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/5327 -> __printf_chk/5329, function body not available
+mask.c:599:3: missed:   not inlinable: measure_mask/5326 -> fclose/5332, function body not available
+mask.c:596:3: missed:   not inlinable: measure_mask/5326 -> fwrite/5349, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: measure_mask/5326 -> __printf_chk/5329, function body not available
+mask.c:579:7: missed:   not inlinable: measure_mask/5326 -> clock_gettime/5348, function body not available
+mask.c:574:7: missed:   not inlinable: measure_mask/5326 -> clock_gettime/5348, function body not available
+mask.c:565:7: missed:   not inlinable: measure_mask/5326 -> error/5315, call is unlikely and code size would grow
+mask.c:560:14: missed:   not inlinable: measure_mask/5326 -> fopen/5331, function body not available
+mask.c:558:27: missed:   not inlinable: measure_mask/5326 -> aligned_alloc/5330, function body not available
+missed:   not inlinable: mask_simd_para/5325 -> __builtin_GOMP_parallel/5343, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+mask.c:482:27: missed:   not inlinable: mask_simd/5324 -> __builtin_assume_aligned/5346, function body not available
+missed:   not inlinable: mask_intrasic_para/5323 -> __builtin_GOMP_parallel/5343, function body not available
+missed:   not inlinable: mask_unroll_para/5321 -> __builtin_GOMP_parallel/5343, function body not available
+missed:   not inlinable: mask_para/5319 -> __builtin_GOMP_parallel/5343, function body not available
+mask.c:136:3: missed:   not inlinable: release_seq/5317 -> free/5339, function body not available
+mask.c:115:3: missed:   not inlinable: load_seq/5316 -> fclose/5332, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:297:10: missed:   not inlinable: load_seq/5316 -> __fread_alias/5338, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:295:9: missed:   not inlinable: load_seq/5316 -> __fread_chk_warn/5337, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:292:9: missed:   not inlinable: load_seq/5316 -> __fread_chk/5336, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:290:8: missed:   not inlinable: load_seq/5316 -> __builtin_constant_p/5335, mismatched arguments
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:287:7: missed:   not inlinable: load_seq/5316 -> __builtin_object_size/5334, function body not available
+mask.c:103:14: missed:   not inlinable: load_seq/5316 -> fopen/5331, function body not available
+mask.c:94:14: missed:   not inlinable: load_seq/5316 -> aligned_alloc/5330, function body not available
+mask.c:82:23: missed:   not inlinable: load_seq/5316 -> aligned_alloc/5330, function body not available
+/usr/include/x86_64-linux-gnu/sys/stat.h:455:10: missed:   not inlinable: load_seq/5316 -> __xstat/5333, function body not available
+mask.c:59:3: missed:   not inlinable: error/5315 -> exit/5328, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: error/5315 -> __printf_chk/5329, function body not available
+Unit growth for small function inlining: 1534->1534 (0%)
+
+Inlined 17 calls, eliminated 0 functions
+
+mask.c:152:3: optimized: loop vectorized using 32 byte vectors
+mask.c:149:6: note: vectorized 1 loops in function.
+mask.c:152:3: note: considering unrolling loop 3 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:3: optimized: loop unrolled 7 times
+mask.c:152:19: note: considering unrolling loop 1 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:19: optimized: loop unrolled 7 times
+mask.c:152:19: note: considering unrolling loop 2 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:152:19: optimized: loop unrolled 7 times
+mask.c:234:3: optimized: loop vectorized using 32 byte vectors
+mask.c:168:3: optimized: loop vectorized using 32 byte vectors
+mask.c:165:6: note: vectorized 2 loops in function.
+mask.c:168:3: note: SLPing BB part
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _761 = *_762;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_762
+mask.c:168:3: note: created vectp.309_524
+mask.c:168:3: note: add new stmt: vect__761.310_1 = MEM[(const u8 *)vectp.309_524];
+mask.c:168:3: note: add new stmt: vectp.309_2068 = vectp.309_524 + 32;
+mask.c:168:3: note: add new stmt: vect__761.311_2069 = MEM[(const u8 *)vectp.309_2068];
+mask.c:168:3: note: add new stmt: vect__761.312_2 = VEC_PERM_EXPR <vect__761.310_1, vect__761.310_1, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _759 = *_760;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_760
+mask.c:168:3: note: created vectp.314_3
+mask.c:168:3: note: add new stmt: vect__759.315_2581 = MEM[(const u8 *)vectp.314_3];
+mask.c:168:3: note: add new stmt: vectp.314_2582 = vectp.314_3 + 32;
+mask.c:168:3: note: add new stmt: vect__759.316_4 = MEM[(const u8 *)vectp.314_2582];
+mask.c:168:3: note: add new stmt: vect__759.317_5 = VEC_PERM_EXPR <vect__759.315_2581, vect__759.315_2581, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _757 = _761 ^ _759;
+mask.c:168:3: note: vect_is_simple_use: operand *_762, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype const vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand *_760, type of def: internal
+mask.c:168:3: note: transform binary/unary operation.
+mask.c:168:3: note: add new stmt: vect__757.318_6 = vect__761.312_2 ^ vect__759.317_5;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: *_758 = _757;
+mask.c:168:3: note: vect_is_simple_use: operand _761 ^ _759, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand _753 ^ _751, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _745 ^ _743, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _737 ^ _735, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _729 ^ _727, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _721 ^ _719, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _713 ^ _711, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _705 ^ _703, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _697 ^ _695, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _761 ^ _759, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _686 ^ _684, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _678 ^ _676, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _670 ^ _668, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _662 ^ _660, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _654 ^ _652, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _646 ^ _644, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _638 ^ _636, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _630 ^ _628, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _622 ^ _620, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _614 ^ _612, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _606 ^ _604, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _598 ^ _596, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _590 ^ _588, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _582 ^ _580, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _574 ^ _572, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _566 ^ _564, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _558 ^ _556, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _550 ^ _548, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _542 ^ _540, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _534 ^ _532, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _518 ^ _445, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1148 ^ _1146, type of def: internal
+mask.c:168:3: note: transform store. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: vector(32) unsigned char  vectorizing a pointer ref: *_758
+mask.c:168:3: note: created vectp.320_7
+mask.c:168:3: note: add new stmt: MEM[(u8 *)vectp.320_7] = vect__757.318_6;
+mask.c:168:3: note: vectorizing stmts using SLP.
+mask.c:168:3: optimized: basic block part vectorized using 32 byte vectors
+mask.c:168:3: note: basic block vectorized
+mask.c:168:3: note: SLPing BB part
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1333 = *_1334;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_1334
+mask.c:168:3: note: created vectp.322_9
+mask.c:168:3: note: add new stmt: vect__1333.323_10 = MEM[(const u8 *)vectp.322_9];
+mask.c:168:3: note: add new stmt: vectp.322_11 = vectp.322_9 + 32;
+mask.c:168:3: note: add new stmt: vect__1333.324_12 = MEM[(const u8 *)vectp.322_11];
+mask.c:168:3: note: add new stmt: vect__1333.325_13 = VEC_PERM_EXPR <vect__1333.323_10, vect__1333.323_10, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1331 = *_1332;
+mask.c:168:3: note: transform load. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: const vector(32) unsigned char  vectorizing a pointer ref: *_1332
+mask.c:168:3: note: created vectp.327_14
+mask.c:168:3: note: add new stmt: vect__1331.328_15 = MEM[(const u8 *)vectp.327_14];
+mask.c:168:3: note: add new stmt: vectp.327_16 = vectp.327_14 + 32;
+mask.c:168:3: note: add new stmt: vect__1331.329_17 = MEM[(const u8 *)vectp.327_16];
+mask.c:168:3: note: add new stmt: vect__1331.330_18 = VEC_PERM_EXPR <vect__1331.328_15, vect__1331.328_15, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 }>;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: _1329 = _1333 ^ _1331;
+mask.c:168:3: note: vect_is_simple_use: operand *_1334, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype const vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand *_1332, type of def: internal
+mask.c:168:3: note: transform binary/unary operation.
+mask.c:168:3: note: add new stmt: vect__1329.331_19 = vect__1333.325_13 ^ vect__1331.330_18;
+mask.c:168:3: note: ------>vectorizing SLP node starting from: *_1330 = _1329;
+mask.c:168:3: note: vect_is_simple_use: operand _1333 ^ _1331, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: vectype vector(32) unsigned char
+mask.c:168:3: note: vect_is_simple_use: operand _1325 ^ _1323, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1317 ^ _1315, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1309 ^ _1307, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1301 ^ _1299, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1293 ^ _1291, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1285 ^ _1283, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1277 ^ _1275, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1269 ^ _1267, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1333 ^ _1331, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1258 ^ _1256, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1250 ^ _1248, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1242 ^ _1240, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1234 ^ _1232, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1226 ^ _1224, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1218 ^ _1216, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1210 ^ _1208, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1202 ^ _1200, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1194 ^ _1192, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1186 ^ _1184, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1178 ^ _1176, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1170 ^ _1168, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1162 ^ _1160, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1154 ^ _1152, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1080 ^ _1078, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1072 ^ _1070, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1064 ^ _1062, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1056 ^ _1054, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1048 ^ _1046, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1040 ^ _1038, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1032 ^ _1030, type of def: internal
+mask.c:168:3: note: vect_is_simple_use: operand _1024 ^ _1022, type of def: internal
+mask.c:168:3: note: transform store. ncopies = 1
+mask.c:168:3: note: create vector_type-pointer variable to type: vector(32) unsigned char  vectorizing a pointer ref: *_1330
+mask.c:168:3: note: created vectp.333_20
+mask.c:168:3: note: add new stmt: MEM[(u8 *)vectp.333_20] = vect__1329.331_19;
+mask.c:168:3: note: vectorizing stmts using SLP.
+mask.c:168:3: optimized: basic block part vectorized using 32 byte vectors
+mask.c:168:3: note: basic block vectorized
+mask.c:168:3: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:234:3: note: considering unrolling loop 4 at BB 21
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:3: optimized: loop unrolled 7 times
+mask.c:234:28: note: considering unrolling loop 2 at BB 18
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:28: optimized: loop unrolled 7 times
+mask.c:234:28: note: considering unrolling loop 3 at BB 15
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:234:28: optimized: loop unrolled 7 times
+mask.c:168:3: note: considering unrolling loop 5 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:168:3: note: considering unrolling loop 6 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:168:19: note: considering unrolling loop 1 at BB 5
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:414:3: missed: couldn't vectorize loop
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:547:10: missed: not vectorized: no vectype for stmt: _17 = MEM[(__m512i * {ref-all})_1];
+ scalar_type: __m512i
+mask.c:408:6: note: vectorized 0 loops in function.
+mask.c:414:3: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:414:3: note: considering unrolling loop 1 at BB 4
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:414:3: optimized: loop unrolled 7 times
+consider run-time aliasing test between *_22 and *_26
+consider run-time aliasing test between *_24 and *_26
+mask.c:160:5: optimized: loop vectorized using 32 byte vectors
+mask.c:160:5: optimized:  loop versioned for vectorization because of possible aliasing
+mask.c:158:11: note: vectorized 1 loops in function.
+mask.c:160:10: note: considering unrolling loop 2 at BB 20
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 4 at BB 16
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 1 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:160:10: note: considering unrolling loop 3 at BB 11
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:160:10: optimized: loop unrolled 7 times
+mask.c:156:6: note: vectorized 0 loops in function.
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: ***** Re-trying analysis with vector size 32
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: ***** Re-trying analysis with vector size 16
+mask.c:156:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_para._omp_fn.0, &.omp_data_o.4, 0, 0);
+mask.c:158:11: note: SLPing BB part
+mask.c:158:11: note: ------>vectorizing SLP node starting from: .omp_data_o.4.a = a_8(D);
+mask.c:158:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:158:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:158:11: note: transform store. ncopies = 1
+mask.c:158:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:158:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.4.a
+mask.c:158:11: note: created &.omp_data_o.4.a
+mask.c:158:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.4] = vect_cst__15;
+mask.c:158:11: note: vectorizing stmts using SLP.
+mask.c:158:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:161:1: note: basic block vectorized
+mask.c:355:3: optimized: loop vectorized using 32 byte vectors
+mask.c:286:6: note: vectorized 1 loops in function.
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: ***** Re-trying analysis with vector size 32
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: ***** Re-trying analysis with vector size 16
+mask.c:286:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_unroll_para._omp_fn.0, &.omp_data_o.8, 0, 0);
+mask.c:288:11: note: SLPing BB part
+mask.c:288:11: note: ------>vectorizing SLP node starting from: .omp_data_o.8.a = a_16(D);
+mask.c:288:11: note: vect_is_simple_use: operand a_16(D), type of def: external
+mask.c:288:11: note: vect_is_simple_use: operand b_14(D), type of def: external
+mask.c:288:11: note: transform store. ncopies = 1
+mask.c:288:11: note: created new init_stmt: vect_cst__3 = _2;
+mask.c:288:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.8.a
+mask.c:288:11: note: created &.omp_data_o.8.a
+mask.c:288:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.8] = vect_cst__3;
+mask.c:288:11: note: vectorizing stmts using SLP.
+mask.c:288:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:355:3: note: basic block vectorized
+mask.c:355:3: note: considering unrolling loop 4 at BB 12
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:3: optimized: loop unrolled 7 times
+mask.c:355:28: note: considering unrolling loop 1 at BB 9
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:28: optimized: loop unrolled 7 times
+mask.c:355:28: note: considering unrolling loop 3 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:355:28: optimized: loop unrolled 7 times
+mask.c:443:6: note: vectorized 0 loops in function.
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: ***** Re-trying analysis with vector size 32
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: ***** Re-trying analysis with vector size 16
+mask.c:443:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_intrasic_para._omp_fn.0, &.omp_data_o.13, 0, 0);
+mask.c:449:11: note: SLPing BB part
+mask.c:449:11: note: ------>vectorizing SLP node starting from: .omp_data_o.13.a = a_8(D);
+mask.c:449:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:449:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:449:11: note: transform store. ncopies = 1
+mask.c:449:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:449:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.13.a
+mask.c:449:11: note: created &.omp_data_o.13.a
+mask.c:449:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.13] = vect_cst__15;
+mask.c:449:11: note: vectorizing stmts using SLP.
+mask.c:449:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:460:1: note: basic block vectorized
+mask.c:499:6: note: vectorized 0 loops in function.
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: ***** Re-trying analysis with vector size 32
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: ***** Re-trying analysis with vector size 16
+mask.c:499:6: missed: statement clobbers memory: __builtin_GOMP_parallel (mask_simd_para._omp_fn.0, &.omp_data_o.21, 0, 0);
+mask.c:501:11: note: SLPing BB part
+mask.c:501:11: note: ------>vectorizing SLP node starting from: .omp_data_o.21.a = a_8(D);
+mask.c:501:11: note: vect_is_simple_use: operand a_8(D), type of def: external
+mask.c:501:11: note: vect_is_simple_use: operand b_6(D), type of def: external
+mask.c:501:11: note: transform store. ncopies = 1
+mask.c:501:11: note: created new init_stmt: vect_cst__15 = _14;
+mask.c:501:11: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.21.a
+mask.c:501:11: note: created &.omp_data_o.21.a
+mask.c:501:11: note: add new stmt: MEM[(const u8 * *)&.omp_data_o.21] = vect_cst__15;
+mask.c:501:11: note: vectorizing stmts using SLP.
+mask.c:501:11: optimized: basic block part vectorized using 16 byte vectors
+mask.c:504:1: note: basic block vectorized
+mask.c:291:5: optimized: loop vectorized using 32 byte vectors
+mask.c:291:5: optimized:  loop versioned for vectorization because of possible aliasing
+mask.c:288:11: note: vectorized 1 loops in function.
+mask.c:353:13: note: ***** Re-trying analysis with vector size 64
+mask.c:353:13: note: ***** Re-trying analysis with vector size 16
+mask.c:353:13: note: ***** Re-trying analysis with vector size 64
+mask.c:353:13: note: ***** Re-trying analysis with vector size 16
+mask.c:288:11: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:353:13: note: considering unrolling loop 2 at BB 12
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:353:13: note: considering unrolling loop 3 at BB 10
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:353:13: note: considering unrolling loop 1 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:453:4: missed: couldn't vectorize loop
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:547:10: missed: not vectorized: no vectype for stmt: _35 = MEM[(__m512i * {ref-all})_26];
+ scalar_type: __m512i
+mask.c:449:11: note: vectorized 0 loops in function.
+mask.c:449:11: missed: missed loop optimization: niters analysis ends up with assumptions.
+mask.c:456:5: note: considering unrolling loop 1 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:456:5: optimized: loop unrolled 7 times
+mask.c:485:5: optimized: loop vectorized using 32 byte vectors
+mask.c:480:6: note: vectorized 1 loops in function.
+mask.c:485:10: note: considering unrolling loop 2 at BB 9
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:485:10: optimized: loop unrolled 7 times
+mask.c:485:10: note: considering unrolling loop 1 at BB 5
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:485:10: optimized: loop unrolled 7 times
+consider run-time aliasing test between *_22 and *_26
+consider run-time aliasing test between *_24 and *_26
+mask.c:503:7: optimized: loop vectorized using 32 byte vectors
+mask.c:501:11: note: vectorized 1 loops in function.
+mask.c:503:12: note: considering unrolling loop 3 at BB 14
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+mask.c:503:12: note: considering unrolling loop 1 at BB 11
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+mask.c:503:12: note: considering unrolling loop 2 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:503:12: optimized: loop unrolled 7 times
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Error (%llu): %s\n", err_id.0_1, _2);
+mask.c:59:3: missed: statement clobbers memory: exit (-1);
+/usr/include/x86_64-linux-gnu/sys/stat.h:455:10: missed: statement clobbers memory: _26 = __xstat (1, fname_9(D), &sb);
+mask.c:82:23: missed: statement clobbers memory: s_12 = aligned_alloc (64, 16);
+mask.c:94:14: missed: statement clobbers memory: _3 = aligned_alloc (64, _2);
+mask.c:103:14: missed: statement clobbers memory: fp_17 = fopen (fname_9(D), "rb");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:297:10: missed: statement clobbers memory: _32 = __fread_alias (_5, 1, _4, fp_17);
+mask.c:115:3: missed: statement clobbers memory: fclose (fp_17);
+mask.c:136:3: missed: statement clobbers memory: free (_1);
+mask.c:583:3: missed: couldn't vectorize loop
+mask.c:583:3: missed: not vectorized: number of iterations cannot be computed.
+mask.c:576:7: missed: couldn't vectorize loop
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:548:6: note: vectorized 0 loops in function.
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:558:27: missed: statement clobbers memory: cmp_mask_16 = aligned_alloc (64, n_14(D));
+mask.c:560:14: missed: statement clobbers memory: fp_18 = fopen ("mask.dat", "wb");
+mask.c:565:7: missed: statement clobbers memory: error ();
+mask.c:571:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:574:7: missed: statement clobbers memory: clock_gettime (4, &t1);
+mask.c:577:7: missed: statement clobbers memory: kernel_21(D) (s1_22(D), s2_23(D), cmp_mask_16, n_14(D));
+mask.c:579:7: missed: statement clobbers memory: clock_gettime (4, &t2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "%25s; 0x%08x; %15.3lf; %15.3lf\n", title_29(D), _8, elapsed_12, bw_28);
+mask.c:596:3: missed: statement clobbers memory: fwrite (cmp_mask_16, 1, n_14(D), fp_18);
+mask.c:599:3: missed: statement clobbers memory: fclose (fp_18);
+mask.c:576:7: note: considering unrolling loop 2 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+mask.c:583:3: note: considering unrolling loop 1 at BB 5
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Usage: %s [seq1] [seq2]\n", _1);
+mask.c:610:15: missed: statement clobbers memory: s1_36 = load_seq (_2);
+mask.c:613:5: missed: statement clobbers memory: error ();
+mask.c:616:15: missed: statement clobbers memory: s2_39 = load_seq (_3);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Error: sequences must match in length");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "%25s; %10s; %15s; %15s\n", "title", "mask", "elapsed(ns)", "GB/s");
+mask.c:629:3: missed: statement clobbers memory: measure_mask ("Naive", mask, _8, _7, _6);
+mask.c:630:3: missed: statement clobbers memory: measure_mask ("Naive_para", mask_para, _11, _10, _9);
+mask.c:631:3: missed: statement clobbers memory: measure_mask ("Unroll", mask_unroll, _14, _13, _12);
+mask.c:632:3: missed: statement clobbers memory: measure_mask ("Unroll_para", mask_unroll_para, _17, _16, _15);
+mask.c:633:3: missed: statement clobbers memory: measure_mask ("Intasic", mask_intrasic, _20, _19, _18);
+mask.c:634:3: missed: statement clobbers memory: measure_mask ("Intasic_para", mask_intrasic_para, _23, _22, _21);
+mask.c:635:3: missed: statement clobbers memory: measure_mask ("OMP_Simd", mask_simd, _26, _25, _24);
+mask.c:636:3: missed: statement clobbers memory: measure_mask ("OMP_Simd_para", mask_simd_para, _29, _28, _27);
+mask.c:136:3: missed: statement clobbers memory: free (_52);
+mask.c:640:20: missed: statement clobbers memory: free (s1_36);
+mask.c:136:3: missed: statement clobbers memory: free (_51);
+mask.c:641:20: missed: statement clobbers memory: free (s2_39);
