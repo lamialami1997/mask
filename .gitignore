@@ -1,5 +1,10 @@
 *.dna
 *.dat
-mask.*
-genseq.*
+maskicx_*
+maskgcc_*
+mask.g
+mask.i
+genseq
 dist.gcc.optrpt
+genseq
+
